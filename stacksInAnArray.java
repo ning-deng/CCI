@@ -42,6 +42,7 @@ public class stacksInAnArray {
         }
         else{
             System.out.println("No enough space for the data");
+            return;
         }
     }
 
@@ -56,9 +57,17 @@ public class stacksInAnArray {
 
         Node topn=topPointerMap.get(n);
         Object item=null;
+        Node tempTopN=topn;
         if(topn!=null){
             item=topn.val;
+            tempTopN=topn;
             topn=topn.next;
+        }
+        for(int i=0;i<stackArr.length;i++){
+            if(stackArr[i]==tempTopN){
+                stackArr[i]=null;
+                break;
+            }
         }
         topPointerMap.put(n,topn);
         return item;
