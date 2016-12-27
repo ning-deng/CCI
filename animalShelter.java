@@ -38,7 +38,7 @@ public class animalShelter {
     public animal dequeueDog(){
         animal oldestDog=null;
         for(int i=0;i<animals.size();i++){
-           if(animals.get(i).type=="dog"){
+           if(animals.get(i).type.equals("dog")){
                oldestDog=animals.get(i);
                animals.remove(i);
                break;
@@ -50,7 +50,7 @@ public class animalShelter {
     public animal dequeueCat(){
         animal oldestCat=null;
         for(int i=0;i<animals.size();i++){
-            if(animals.get(i).type=="cat"){
+            if(animals.get(i).type.equals("cat")){
                 oldestCat=animals.get(i);
                 animals.remove(i);
                 break;
